@@ -1,0 +1,93 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="iSchoolOS.MainPage"
+    BackgroundColor="#1a1625"
+    Title="Smart Campus OS">
+
+    <ScrollView>
+        <VerticalStackLayout Padding="25" Spacing="15" HorizontalOptions="Center" WidthRequest="380">
+
+            <!-- Header -->
+            <Label Text="SMART CAMPUS OS"
+                   TextColor="#d1c4e9"
+                   FontSize="26"
+                   FontAttributes="Bold"
+                   HorizontalOptions="Center" />
+            <Label Text="Mobile Operations Dashboard"
+                   TextColor="#9575cd"
+                   FontSize="14"
+                   HorizontalOptions="Center" />
+
+            <!-- Dashboard Card for Telemetry -->
+            <Border BackgroundColor="#1a1625" 
+                    Stroke="#312a42" 
+                    StrokeThickness="3" 
+                    Padding="20" 
+                    StrokeShape="RoundRectangle 20">
+                <VerticalStackLayout Spacing="10">
+                    <Label Text="CAMPUS STATUS" TextColor="#b388ff" FontSize="18" FontAttributes="Bold" />
+                    <Label x:Name="StudentsLabel" Text="Students Present: --" TextColor="#e0d9f6" />
+                    <Label x:Name="OccupancyLabel" Text="Room Occupancy: --" TextColor="#e0d9f6" />
+                    <Label x:Name="ParkingLabel" Text="Available Parking: --" TextColor="#e0d9f6" />
+                    <Label x:Name="TemperatureLabel" Text="Temperature: --" TextColor="#e0d9f6" />
+                    <Label x:Name="StatusLabel" Text="Status: Waiting..." TextColor="#9575cd" FontAttributes="Italic" />
+                </VerticalStackLayout>
+            </Border>
+
+            <!-- Action Controls -->
+            <Button Text="REFRESH CAMPUS DATA" 
+                    Clicked="RefreshData_Clicked" 
+                    BackgroundColor="#312a42" 
+                    TextColor="#d1c4e9" 
+                    CornerRadius="12" />
+
+            <Button Text="🎤 SPEAK COMMAND" 
+                    Clicked="SpeakCommand_Clicked" 
+                    BackgroundColor="#4527a0" 
+                    TextColor="#ffffff" 
+                    CornerRadius="12" />
+
+            <Label Text="VOICE COMMAND" TextColor="#d1c4e9" FontAttributes="Bold" HorizontalOptions="Center" />
+            <Label x:Name="VoiceResultLabel" Text="Say a command..." TextColor="#b388ff" FontSize="16" HorizontalOptions="Center" />
+
+            <Button Text="SHOW CAMPUS STATUS" 
+                    Clicked="ShowStatus_Clicked" 
+                    BackgroundColor="#312a42" 
+                    TextColor="#d1c4e9" 
+                    CornerRadius="12" />
+
+            <Button Text="EMERGENCY MODE" 
+                    Clicked="Emergency_Clicked" 
+                    BackgroundColor="#6a1b9a" 
+                    TextColor="#ffffff" 
+                    CornerRadius="12" />
+
+            <!-- Connectivity Status -->
+            <Border BackgroundColor="#1a1625" 
+                    Stroke="#312a42" 
+                    StrokeThickness="3" 
+                    Padding="15" 
+                    StrokeShape="RoundRectangle 20">
+                <VerticalStackLayout Spacing="5">
+                    <Label Text="NETWORK" TextColor="#b388ff" FontAttributes="Bold" />
+                    <Label x:Name="NetworkLabel" Text="Checking..." TextColor="#e0d9f6" />
+                </VerticalStackLayout>
+            </Border>
+
+            <!-- Blockchain State Monitor -->
+            <Border BackgroundColor="#1a1625" 
+                    Stroke="#312a42" 
+                    StrokeThickness="3" 
+                    Padding="15" 
+                    StrokeShape="RoundRectangle 20">
+                <VerticalStackLayout Spacing="5">
+                    <Label Text="BLOCKCHAIN LEDGER" TextColor="#b388ff" FontAttributes="Bold" />
+                    <Label x:Name="BlockchainLabel" Text="No transactions" TextColor="#e0d9f6" />
+                </VerticalStackLayout>
+            </Border>
+
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>
